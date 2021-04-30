@@ -16,7 +16,7 @@ class PDFgenerate extends Controller
     	        'products'=>['paper','pen','laptop']
     	    ];
     	 $pdf=PDF::loadView('pdf.invoice',$data);
-         return View::make('pdf.invoice', $data);
+    	 return $pdf->download('invoice.pdf');
     	// grab some html
     	// create pdf class
     	// send html to the class
