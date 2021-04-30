@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PDFMaker;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,4 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/pdf','PDFMaker@make');
+ 
+Route::get('/pdfview',[PDFMaker::class, 'showPDF']);
+Route::get('/pdfgene',[PDFgenerate::class, 'genePDF']);

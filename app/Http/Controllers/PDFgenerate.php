@@ -7,16 +7,16 @@
   use PDF;
   use View;
 
-class PDFMaker extends Controller
+class PDFgenerate extends Controller
 {
-    public function showPDF()
+    public function genePDF()
     {
     	 $data=['title'=>'Invoice 1003',
     	       'total'=>'700',
     	        'products'=>['paper','pen','laptop']
     	    ];
     	 $pdf=PDF::loadView('pdf.invoice',$data);
-    	 return $pdf->download('invoice.pdf');
+         return View::make('pdf.invoice', $data);
     	// grab some html
     	// create pdf class
     	// send html to the class
